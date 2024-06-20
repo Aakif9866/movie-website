@@ -19,7 +19,10 @@ export default async function Home({searchParams}) {
   const results = data.results;
   return (
     <div>
-      <Results results={results} />
+      {results &&
+        results.length ===
+        <h1 className='text-center pt-6'>No results found</h1>}
+      {results && <Results results={results} />}
     </div>
   )
 }
